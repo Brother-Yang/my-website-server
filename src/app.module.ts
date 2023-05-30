@@ -18,7 +18,7 @@ import { Users } from './users/users.entity';
       password: '12345678',
       database: 'test',
       // autoLoadEntities: true, // 自动链接被 forFeature 注册的实体
-      // synchronize: true, // 实体与表同步 调试模式下开始。不然会有强替换导致数据丢是
+      synchronize: true, // 实体与表同步 调试模式下开始。不然会有强替换导致数据丢是
       entities: [Users],
     }),
     AuthModule,

@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 
 @Dependencies(DataSource)
@@ -18,6 +19,7 @@ import { UsersModule } from './users/users.module';
       autoLoadEntities: true, // 自动链接被 forFeature 注册的实体
       synchronize: true, // 实体与表同步 调试模式下开始。不然会有强替换导致数据丢是
     }),
+    AuthModule,
     UsersModule,
   ],
   controllers: [AppController],

@@ -17,8 +17,8 @@ export class UsersService {
     return this.userRepository.find();
   }
 
-  findOne(name: string): Promise<Users | null> {
-    return this.userRepository.findOne({ where: { name } });
+  findOne(username: string): Promise<Users | null> {
+    return this.userRepository.findOne({ where: { username } });
   }
 
   remove(id: number) {
@@ -38,23 +38,23 @@ export class UsersService {
 //     this.users = [
 //       {
 //         id: '1111',
-//         name: 'john',
+//         username: 'john',
 //         password: 'changeme',
 //       },
 //       {
 //         id: '222222',
-//         name: 'chris',
+//         username: 'chris',
 //         password: 'secret',
 //       },
 //       {
 //         id: '33333',
-//         name: 'maria',
+//         username: 'maria',
 //         password: 'guess',
 //       },
 //     ];
 //   }
 
-//   async findOne(name: string): Promise<User | undefined> {
-//     return this.users.find((user) => user.name === name);
+//   async findOne(username: string): Promise<User | undefined> {
+//     return this.users.find((user) => user.username === username);
 //   }
 // }

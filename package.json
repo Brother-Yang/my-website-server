@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "npx nodemon ./index"
+    "start": "npx nodemon ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,10 @@
   },
   "homepage": "https://github.com/Brother-Yang/web-server-nest#readme",
   "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.5",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "ejs": "^3.1.9",

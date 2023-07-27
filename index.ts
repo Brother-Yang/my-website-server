@@ -1,9 +1,8 @@
-import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-
-import LoginRouter from './router/login.js';
-import CookieRouter from './router/cookie.js';
+const cors = require('cors');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const LoginRouter = require('./router/login');
+const CookieRouter = require('./router/cookie');
 
 const app = express();
 

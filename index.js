@@ -1,10 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const cookieParser = require('cookie-parser');
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
-const LoginRouter = require('./router/login');
-const CookieRouter = require('./router/cookie');
+import LoginRouter from './router/login.js';
+import CookieRouter from './router/cookie.js';
+
+const app = express();
 
 app.use(cors());
 app.use(express.json());

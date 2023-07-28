@@ -1,8 +1,8 @@
-const cors = require('cors');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const LoginRouter = require('./router/login');
-const CookieRouter = require('./router/cookie');
+import cookieParser from 'cookie-parser';
+import express from 'express';
+import cors from 'cors';
+
+import CookieRouter from './router/cookie';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.send('hello world');
 });
 
-app.use('/login', LoginRouter);
+// app.use('/login', LoginRouter);
 app.use('/cookie', CookieRouter);
 
 app.listen(3456, () => {

@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -18,4 +18,5 @@ router.get('/get', function (req, res) {
   console.log(req.signedCookies.userName);
   res.send('获取cookie成功，cookie为：' + req.signedCookies.userName);
 });
-module.exports = router;
+
+export default router;

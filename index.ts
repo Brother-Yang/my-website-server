@@ -6,12 +6,16 @@ import CookieRouter from './router/cookie';
 import MysqlRouter from './router/mysql';
 import LoginRouter from './router/login';
 
+import { resultMiddleware } from './utils/costomMiddleware';
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 // app.use(express.static('./public'));
 app.use(cookieParser('secret'));
+// 统一接口返回格式
+app.use(resultMiddleware());
 
 app.get('/', (req, res) => {
   res.send('hello world');

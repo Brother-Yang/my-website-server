@@ -1,19 +1,18 @@
 import jwt from '../config/jwt.config';
 import loginServices from '../services/login';
 
-import { Response, Request } from 'express';
+import { ResponseWithResultSend } from '../interfaces/common';
+
+import { Request } from 'express';
 
 const loginController = {
-  getUser: async (req: Request, res: Response) => {
+  getUser: async (req: Request, res: ResponseWithResultSend) => {
     const { password, username } = req.body;
 
     const user = await loginServices.getUser({ username, password });
 
     if (!user) {
-      return res.send({
-        ok: 0,
-        msg: '用户名或密码错误',
-      });
+      return res.resultSend({ code: -1, msg: '请求失败', data: null });
     } else {
       const token = jwt.generate(
         {
@@ -23,10 +22,8 @@ const loginController = {
         '10s',
       );
 
-      return res.send({
-        ok: 1,
-        msg: '登录成功',
-        token,
+      return res.resultSend({
+        data: token,
       });
     }
   },

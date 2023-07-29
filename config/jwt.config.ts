@@ -12,7 +12,7 @@ const JWT = {
   },
   verify(token: string) {
     try {
-      return jwt.verify(token, secret); //返回的是解析后的token，原始数据+自带的数据构成的对象
+      return jwt.verify(token, secret) as { id: string; username: string }; //返回的是解析后的token，原始数据+自带的数据构成的对象
     } catch (e) {
       return false; //通过上面按个方法会自动解出是否过期，可是会报错，所以用try-catch
     }

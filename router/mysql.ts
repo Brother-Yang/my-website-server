@@ -1,16 +1,18 @@
 import express from 'express';
 
-import db from './../config/db.config';
+import db from '../config/db.config';
+
+import { ResponseWithResultSend } from '../interfaces/common';
 
 const router = express.Router();
 
-router.get('/users', async (req, res) => {
+router.get('/users', async (req, res: ResponseWithResultSend) => {
   const sql = 'select * from users';
 
   const result = await db.query(sql);
 
-  res.send({
-    ok: 1,
+  res.resultSend({
+    code: 1,
     data: result[0],
   });
 });
